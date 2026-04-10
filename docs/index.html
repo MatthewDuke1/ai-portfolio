@@ -14,234 +14,130 @@
     /* Hero */
     .hero {
       min-height: 50vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px 40px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 60px 20px 40px;
       background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15) 0%, transparent 60%);
     }
-    .hero-label {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #818cf8;
-      margin-bottom: 16px;
-    }
+    .hero-label { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #818cf8; margin-bottom: 16px; }
     .hero h1 {
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: 800;
-      line-height: 1.1;
-      max-width: 700px;
+      font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; max-width: 700px;
       background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .hero p {
-      font-size: 18px;
-      color: #a1a1aa;
-      max-width: 560px;
-      margin-top: 20px;
-    }
-    .hero-meta {
-      display: flex;
-      gap: 24px;
-      margin-top: 28px;
-      font-size: 14px;
-      color: #71717a;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    .hero p { font-size: 18px; color: #a1a1aa; max-width: 560px; margin-top: 20px; }
+    .hero-meta { display: flex; gap: 24px; margin-top: 28px; font-size: 14px; color: #71717a; flex-wrap: wrap; justify-content: center; }
     .hero-meta a { color: #818cf8; text-decoration: none; }
     .hero-meta a:hover { text-decoration: underline; }
 
-    /* Container */
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    /* Time Saved Banner */
+    .time-banner {
+      display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+      margin-top: 40px; padding: 24px 32px;
+      background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.15);
+      border-radius: 16px; max-width: 700px;
+    }
+    .time-stat { text-align: center; }
+    .time-stat .num { font-size: 32px; font-weight: 800; color: #818cf8; }
+    .time-stat .label { font-size: 12px; color: #71717a; margin-top: 2px; }
 
-    /* Section */
-    .section-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #818cf8;
-      margin-bottom: 8px;
-    }
-    .section-title {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 32px;
-    }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #818cf8; margin-bottom: 8px; }
+    .section-title { font-size: 28px; font-weight: 700; margin-bottom: 32px; }
 
     /* App Cards */
     .apps { padding: 40px 0 60px; }
-    .app-card {
-      background: #111113;
-      border: 1px solid #27272a;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      transition: border-color 0.3s;
-    }
+    .app-card { background: #111113; border: 1px solid #27272a; border-radius: 16px; overflow: hidden; margin-bottom: 32px; transition: border-color 0.3s; }
     .app-card:hover { border-color: #3f3f46; }
-
-    .app-header {
-      padding: 32px 32px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .app-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      flex-shrink: 0;
-    }
+    .app-header { padding: 32px 32px 24px; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+    .app-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
     .app-icon-1 { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
     .app-icon-2 { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
     .app-icon-3 { background: linear-gradient(135deg, #f59e0b, #f97316); }
-
     .app-info { flex: 1; min-width: 200px; }
     .app-info h3 { font-size: 22px; font-weight: 700; }
     .app-info p { font-size: 15px; color: #a1a1aa; margin-top: 8px; line-height: 1.5; }
-
     .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .tag {
-      background: #18181b;
-      border: 1px solid #27272a;
-      color: #a1a1aa;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-    }
+    .tag { background: #18181b; border: 1px solid #27272a; color: #a1a1aa; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
 
-    .app-stats {
-      display: flex;
-      gap: 24px;
-      padding: 0 32px 20px;
-      font-size: 14px;
-      color: #71717a;
-      flex-wrap: wrap;
-    }
+    /* Stats row */
+    .app-stats { display: flex; gap: 24px; padding: 0 32px 12px; font-size: 14px; color: #71717a; flex-wrap: wrap; }
     .app-stats span { display: flex; align-items: center; gap: 6px; }
-    .stat-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .stat-dot { width: 8px; height: 8px; border-radius: 50; display: inline-block; }
+
+    /* Time Saved row */
+    .time-saved-row {
+      display: flex; gap: 16px; padding: 12px 32px 20px; flex-wrap: wrap; align-items: center;
+    }
+    .time-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+      color: #4ade80; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600;
+    }
+    .time-chip svg { flex-shrink: 0; }
+    .time-note { font-size: 12px; color: #52525b; }
 
     /* AI Badge */
     .ai-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(99,102,241,0.1);
-      border: 1px solid rgba(99,102,241,0.3);
-      color: #a5b4fc;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-left: auto;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3);
+      color: #a5b4fc; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-left: auto;
     }
 
-    /* Dropdown README */
-    .readme-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 32px;
-      border-top: 1px solid #27272a;
-      cursor: pointer;
-      user-select: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: #818cf8;
-      transition: background 0.2s;
+    /* Action bar */
+    .action-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 32px; border-top: 1px solid #27272a; gap: 12px; flex-wrap: wrap;
     }
-    .readme-toggle:hover { background: #18181b; }
-    .readme-toggle .arrow { transition: transform 0.3s; font-size: 16px; }
-    .readme-toggle.open .arrow { transform: rotate(180deg); }
+    .fork-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #818cf8; color: #fff; border: none; padding: 10px 20px;
+      border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
+      transition: background 0.2s; text-decoration: none;
+    }
+    .fork-btn:hover { background: #6366f1; }
+    .fork-btn svg { flex-shrink: 0; }
+    .readme-toggle-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: transparent; border: 1px solid #27272a; color: #818cf8;
+      padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .readme-toggle-btn:hover { background: #18181b; }
+    .readme-toggle-btn .arrow { transition: transform 0.3s; }
+    .readme-toggle-btn.open .arrow { transform: rotate(180deg); }
 
-    .readme-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      border-top: 1px solid #27272a;
-    }
+    /* README dropdown */
+    .readme-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; border-top: 1px solid #27272a; }
     .readme-content.open { max-height: 3000px; }
-    .readme-inner {
-      padding: 24px 32px 32px;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #d4d4d8;
-    }
-    .readme-inner h4 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #fafafa;
-      margin: 20px 0 8px;
-    }
+    .readme-inner { padding: 24px 32px 32px; font-size: 14px; line-height: 1.7; color: #d4d4d8; }
+    .readme-inner h4 { font-size: 16px; font-weight: 700; color: #fafafa; margin: 20px 0 8px; }
     .readme-inner h4:first-child { margin-top: 0; }
     .readme-inner p { margin-bottom: 12px; }
     .readme-inner ul { padding-left: 20px; margin-bottom: 12px; }
     .readme-inner li { margin-bottom: 6px; }
-    .readme-inner code {
-      background: #18181b;
-      border: 1px solid #27272a;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 13px;
-      color: #a5b4fc;
-    }
-    .readme-inner .cmd-block {
-      background: #18181b;
-      border: 1px solid #27272a;
-      border-radius: 8px;
-      padding: 16px;
-      margin: 12px 0;
-      font-family: 'Courier New', monospace;
-      font-size: 13px;
-      color: #a1a1aa;
-      overflow-x: auto;
-    }
+    .readme-inner code { background: #18181b; border: 1px solid #27272a; padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #a5b4fc; }
+    .readme-inner .cmd-block { background: #18181b; border: 1px solid #27272a; border-radius: 8px; padding: 16px; margin: 12px 0; font-family: 'Courier New', monospace; font-size: 13px; color: #a1a1aa; overflow-x: auto; }
     .readme-inner table { width: 100%; border-collapse: collapse; margin: 12px 0; }
-    .readme-inner th, .readme-inner td {
-      text-align: left;
-      padding: 8px 12px;
-      border-bottom: 1px solid #27272a;
-      font-size: 13px;
-    }
+    .readme-inner th, .readme-inner td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #27272a; font-size: 13px; }
     .readme-inner th { color: #fafafa; font-weight: 600; }
 
     /* Footer */
-    .footer {
-      padding: 40px 0;
-      text-align: center;
-      border-top: 1px solid #18181b;
-      color: #52525b;
-      font-size: 13px;
-    }
+    .footer { padding: 40px 0; text-align: center; border-top: 1px solid #18181b; color: #52525b; font-size: 13px; }
     .footer a { color: #818cf8; text-decoration: none; }
     .footer a:hover { text-decoration: underline; }
 
-    /* Responsive */
     @media (max-width: 640px) {
       .app-header { padding: 20px; }
-      .app-stats { padding: 0 20px 16px; }
-      .readme-toggle { padding: 14px 20px; }
+      .app-stats { padding: 0 20px 8px; }
+      .time-saved-row { padding: 8px 20px 16px; }
+      .action-bar { padding: 12px 20px; }
       .readme-inner { padding: 20px; }
+      .time-banner { padding: 20px; gap: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
   <div class="hero">
     <div class="hero-label">AI Engineering Portfolio</div>
     <h1>Applications Built with AI</h1>
@@ -252,15 +148,33 @@
       <a href="https://www.linkedin.com/in/the-duke/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/MatthewDuke1" target="_blank" rel="noopener">GitHub</a>
     </div>
+
+    <div class="time-banner">
+      <div class="time-stat">
+        <div class="num">640+</div>
+        <div class="label">Developer Hours Saved</div>
+      </div>
+      <div class="time-stat">
+        <div class="num">16</div>
+        <div class="label">Weeks of Work in Days</div>
+      </div>
+      <div class="time-stat">
+        <div class="num">97+</div>
+        <div class="label">PRs Shipped with AI</div>
+      </div>
+      <div class="time-stat">
+        <div class="num">3</div>
+        <div class="label">Production Apps</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Apps -->
   <div class="container">
     <div class="apps">
       <div class="section-label">Projects</div>
       <div class="section-title">Featured Applications</div>
 
-      <!-- App 1: QuikSlip Property Management -->
+      <!-- App 1 -->
       <div class="app-card">
         <div class="app-header">
           <div class="app-icon app-icon-1">P</div>
@@ -288,15 +202,31 @@
           <span><span class="stat-dot" style="background:#22c55e"></span> 7 management modules</span>
           <span><span class="stat-dot" style="background:#f59e0b"></span> Full CRUD + email reports</span>
         </div>
-        <div class="readme-toggle" onclick="toggleReadme(this)">
-          <span>View README</span>
-          <span class="arrow">&#9660;</span>
+        <div class="time-saved-row">
+          <span class="time-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~320 hours saved
+          </span>
+          <span class="time-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            8 weeks of work in 3 days
+          </span>
+          <span class="time-note">Estimated vs. manual solo development</span>
+        </div>
+        <div class="action-bar">
+          <button class="readme-toggle-btn" onclick="toggleReadme(this)">
+            <span>View README</span>
+            <span class="arrow">&#9660;</span>
+          </button>
+          <a class="fork-btn" href="https://github.com/QuikSlip/quikslip_property_management-main/fork" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-.878a2.25 2.25 0 111.5 0v.878a2.25 2.25 0 01-2.25 2.25h-1.5v2.128a2.251 2.251 0 11-1.5 0V8.5h-1.5A2.25 2.25 0 013.5 6.25v-.878a2.25 2.25 0 111.5 0zM5 3.25a.75.75 0 10-1.5 0 .75.75 0 001.5 0zm6.75.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8 12.75a.75.75 0 10-1.5 0 .75.75 0 001.5 0z"/></svg>
+            Fork this repo
+          </a>
         </div>
         <div class="readme-content">
           <div class="readme-inner">
             <h4>Overview</h4>
             <p>Admin portal for property managers to oversee parking operations at apartment complexes. Backed by AWS Amplify (AppSync, Cognito, DynamoDB, Lambda, SES).</p>
-
             <h4>Key Features</h4>
             <ul>
               <li><strong>Dashboard</strong> -- Stats cards, daily activity report with email delivery, potential vehicles to tow</li>
@@ -305,10 +235,8 @@
               <li><strong>Roster</strong> -- Staff management with role-based filtering and VOIP call button</li>
               <li><strong>Violations</strong> -- Tracking with license plate anomaly detection (blank, null, special chars)</li>
               <li><strong>Lots</strong> -- Current property display with pulsing active indicator</li>
-              <li><strong>Settings</strong> -- Account management, property info with role dropdown, in-app + email notification preferences</li>
-              <li><strong>Notifications</strong> -- Persistent bell icon notifications with mark-as-read, dismiss, and clear (localStorage)</li>
+              <li><strong>Notifications</strong> -- Persistent bell icon with mark-as-read, dismiss, clear (localStorage)</li>
             </ul>
-
             <h4>Tech Stack</h4>
             <table>
               <tr><th>Layer</th><th>Technology</th></tr>
@@ -319,21 +247,15 @@
               <tr><td>Database</td><td>DynamoDB</td></tr>
               <tr><td>Email</td><td>AWS Lambda + SES</td></tr>
             </table>
-
             <h4>AI Contribution</h4>
-            <p>55+ pull requests were authored with AI-assisted development using Claude. This includes feature implementation, bug diagnosis (e.g., identifying a <code>setTanatData</code> typo causing silent failures), security audits, SEO optimization, and comprehensive documentation.</p>
-
+            <p>55+ pull requests authored with AI-assisted development. Feature implementation, bug diagnosis (e.g., identifying a <code>setTanatData</code> typo causing silent failures), security audits, SEO optimization, and comprehensive documentation -- all delivered in days instead of months.</p>
             <h4>Quick Start</h4>
-            <div class="cmd-block">
-              git clone [repo-url]<br/>
-              npm install<br/>
-              npm run dev
-            </div>
+            <div class="cmd-block">git clone https://github.com/QuikSlip/quikslip_property_management-main.git<br/>npm install<br/>npm run dev</div>
           </div>
         </div>
       </div>
 
-      <!-- App 2: QuikSlip Guest Application -->
+      <!-- App 2 -->
       <div class="app-card">
         <div class="app-header">
           <div class="app-icon app-icon-2">G</div>
@@ -360,51 +282,57 @@
           <span><span class="stat-dot" style="background:#22c55e"></span> Cross-platform (iOS, Android, Web)</span>
           <span><span class="stat-dot" style="background:#f59e0b"></span> Real-time subscriptions</span>
         </div>
-        <div class="readme-toggle" onclick="toggleReadme(this)">
-          <span>View README</span>
-          <span class="arrow">&#9660;</span>
+        <div class="time-saved-row">
+          <span class="time-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~200 hours saved
+          </span>
+          <span class="time-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            5 weeks of work in 2 days
+          </span>
+          <span class="time-note">Estimated vs. manual solo development</span>
+        </div>
+        <div class="action-bar">
+          <button class="readme-toggle-btn" onclick="toggleReadme(this)">
+            <span>View README</span>
+            <span class="arrow">&#9660;</span>
+          </button>
+          <a class="fork-btn" href="https://github.com/QuikSlip/quikslip-app-directory-guests/fork" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-.878a2.25 2.25 0 111.5 0v.878a2.25 2.25 0 01-2.25 2.25h-1.5v2.128a2.251 2.251 0 11-1.5 0V8.5h-1.5A2.25 2.25 0 013.5 6.25v-.878a2.25 2.25 0 111.5 0zM5 3.25a.75.75 0 10-1.5 0 .75.75 0 001.5 0zm6.75.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8 12.75a.75.75 0 10-1.5 0 .75.75 0 001.5 0z"/></svg>
+            Fork this repo
+          </a>
         </div>
         <div class="readme-content">
           <div class="readme-inner">
             <h4>Overview</h4>
             <p>Guest-facing application where tenants register vehicles and visitors obtain digital parking passes through a simple 2-step process. Built with React Native + Expo for cross-platform deployment.</p>
-
             <h4>Key Features</h4>
             <ul>
               <li><strong>Guest Parking Passes</strong> -- 2-step issuance: enter access code, submit vehicle info</li>
               <li><strong>Email Confirmations</strong> -- Passes emailed to guests via Lambda/SES</li>
               <li><strong>Expiry Notifications</strong> -- EventBridge-triggered alerts when passes approach expiry</li>
-              <li><strong>Tenant Vehicle Registration</strong> -- Register primary and secondary vehicles</li>
               <li><strong>Car Autocomplete</strong> -- Make/model suggestions via NHTSA vPIC API</li>
               <li><strong>License Plate Validation</strong> -- Format enforcement across all forms</li>
-              <li><strong>Real-time Subscriptions</strong> -- Live updates via AppSync subscriptions</li>
-              <li><strong>Responsive Design</strong> -- Optimized for mobile and desktop viewports</li>
+              <li><strong>Real-time Subscriptions</strong> -- Live updates via AppSync</li>
             </ul>
-
-            <h4>Data Models (GraphQL)</h4>
+            <h4>Data Models</h4>
             <table>
               <tr><th>Model</th><th>Purpose</th></tr>
               <tr><td>User</td><td>Tenant account with property association</td></tr>
               <tr><td>Tenant</td><td>Registered occupant with vehicles</td></tr>
               <tr><td>Guest</td><td>Visitor with active parking pass</td></tr>
-              <tr><td>GuestProfile</td><td>Extended guest information</td></tr>
               <tr><td>Car</td><td>Vehicle record (make, model, plate)</td></tr>
             </table>
-
             <h4>AI Contribution</h4>
-            <p>AI-assisted development for license plate validation logic, car autocomplete integration with the NHTSA API, responsive layout optimization, security improvements (removing credential logging, XSS prevention in email templates), and documentation.</p>
-
+            <p>AI-assisted development for license plate validation, car autocomplete integration with NHTSA API, responsive layout, security improvements (removing credential logging, XSS prevention in email templates), and documentation.</p>
             <h4>Quick Start</h4>
-            <div class="cmd-block">
-              git clone [repo-url]<br/>
-              npm install<br/>
-              npx expo start
-            </div>
+            <div class="cmd-block">git clone https://github.com/QuikSlip/quikslip-app-directory-guests.git<br/>npm install<br/>npx expo start</div>
           </div>
         </div>
       </div>
 
-      <!-- App 3: QuikSlip Registration -->
+      <!-- App 3 -->
       <div class="app-card">
         <div class="app-header">
           <div class="app-icon app-icon-3">R</div>
@@ -431,55 +359,47 @@
           <span><span class="stat-dot" style="background:#22c55e"></span> 6-step wizard with rollback</span>
           <span><span class="stat-dot" style="background:#ef4444"></span> Full validation + error recovery</span>
         </div>
-        <div class="readme-toggle" onclick="toggleReadme(this)">
-          <span>View README</span>
-          <span class="arrow">&#9660;</span>
+        <div class="time-saved-row">
+          <span class="time-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~120 hours saved
+          </span>
+          <span class="time-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            3 weeks of work in 1 day
+          </span>
+          <span class="time-note">Estimated vs. manual solo development</span>
+        </div>
+        <div class="action-bar">
+          <button class="readme-toggle-btn" onclick="toggleReadme(this)">
+            <span>View README</span>
+            <span class="arrow">&#9660;</span>
+          </button>
+          <a class="fork-btn" href="https://github.com/QuikSlip/QuikSlip-Registration-Component/fork" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-.878a2.25 2.25 0 111.5 0v.878a2.25 2.25 0 01-2.25 2.25h-1.5v2.128a2.251 2.251 0 11-1.5 0V8.5h-1.5A2.25 2.25 0 013.5 6.25v-.878a2.25 2.25 0 111.5 0zM5 3.25a.75.75 0 10-1.5 0 .75.75 0 001.5 0zm6.75.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8 12.75a.75.75 0 10-1.5 0 .75.75 0 001.5 0z"/></svg>
+            Fork this repo
+          </a>
         </div>
         <div class="readme-content">
           <div class="readme-inner">
             <h4>Overview</h4>
-            <p>Multi-step registration form for apartment complex managers to onboard their properties onto the platform. Provisions user accounts via AWS Cognito and stores property data in DynamoDB through AppSync.</p>
-
+            <p>Multi-step registration form for apartment complex managers to onboard their properties. Provisions user accounts via AWS Cognito and stores property data in DynamoDB through AppSync.</p>
             <h4>Registration Flow</h4>
             <table>
               <tr><th>Step</th><th>Screen</th><th>Details</th></tr>
               <tr><td>1</td><td>Personal Info</td><td>Name, email (duplicate check), phone, password</td></tr>
-              <tr><td>2</td><td>Complex Info</td><td>Complex name, address, unit count, contact info, image upload</td></tr>
-              <tr><td>3</td><td>Parking Config</td><td>Total spots, tenant/guest/admin/handicap allocation with total validation</td></tr>
-              <tr><td>4</td><td>Review</td><td>Confirmation of all data. On submit: creates User, signs up in Cognito, creates Tenant</td></tr>
+              <tr><td>2</td><td>Complex Info</td><td>Complex name, address, unit count, contact info</td></tr>
+              <tr><td>3</td><td>Parking Config</td><td>Total spots, tenant/guest/admin/handicap allocation</td></tr>
+              <tr><td>4</td><td>Review</td><td>Confirm all data. Submit creates User + Cognito + Tenant</td></tr>
               <tr><td>5</td><td>Verify Email</td><td>Enter Cognito confirmation code</td></tr>
-              <tr><td>6</td><td>Complete</td><td>Success message with Stripe payment redirect</td></tr>
+              <tr><td>6</td><td>Complete</td><td>Success + Stripe payment redirect</td></tr>
             </table>
-
             <h4>Orchestration with Rollback</h4>
-            <p>The submit handler on Step 4 performs a multi-step orchestration:</p>
-            <ul>
-              <li>Create User record in AppSync (DynamoDB)</li>
-              <li>Sign up user in AWS Cognito</li>
-              <li>Update User with Cognito ID</li>
-              <li>Create Tenant record</li>
-              <li>Post to Google Sheets (optional CRM logging)</li>
-              <li><strong>If any step fails, all previous operations are rolled back</strong></li>
-            </ul>
-
-            <h4>Validation</h4>
-            <ul>
-              <li><strong>Name:</strong> Letters only, sanitized on input</li>
-              <li><strong>Email:</strong> Regex validated, checked for existing accounts via GraphQL query</li>
-              <li><strong>Phone:</strong> 10-15 digits, optional + prefix</li>
-              <li><strong>Password:</strong> Min 8 characters, must match confirmation</li>
-              <li><strong>Parking:</strong> Total allocated cannot exceed total spots</li>
-            </ul>
-
+            <p>Step 4 performs multi-step orchestration: create User in AppSync, sign up in Cognito, update User with Cognito ID, create Tenant. <strong>If any step fails, all previous operations are rolled back automatically.</strong></p>
             <h4>AI Contribution</h4>
-            <p>AI-assisted development for form UX consistency, responsive redesign of the confirmation page, license plate validation, car autocomplete via NHTSA API, security improvements (removing hardcoded Cognito IDs), dead code cleanup, and comprehensive documentation.</p>
-
+            <p>AI-assisted development for form UX, responsive confirmation redesign, license plate validation, car autocomplete, security improvements (removing hardcoded Cognito IDs), and documentation.</p>
             <h4>Quick Start</h4>
-            <div class="cmd-block">
-              git clone [repo-url]<br/>
-              npm install<br/>
-              npm start
-            </div>
+            <div class="cmd-block">git clone https://github.com/QuikSlip/QuikSlip-Registration-Component.git<br/>npm install<br/>npm start</div>
           </div>
         </div>
       </div>
@@ -490,13 +410,13 @@
   <!-- Footer -->
   <div class="footer">
     <p>Matt Duke &mdash; Dallas, TX &mdash; <a href="https://www.linkedin.com/in/the-duke/">LinkedIn</a> &mdash; <a href="https://github.com/MatthewDuke1">GitHub</a></p>
-    <p style="margin-top:8px;">Built with AI-assisted engineering</p>
+    <p style="margin-top:8px;">Built with AI-assisted engineering &mdash; 640+ hours saved</p>
   </div>
 
   <script>
-    function toggleReadme(el) {
-      el.classList.toggle('open');
-      el.nextElementSibling.classList.toggle('open');
+    function toggleReadme(btn) {
+      btn.classList.toggle('open');
+      btn.closest('.action-bar').nextElementSibling.classList.toggle('open');
     }
   </script>
 </body>
