@@ -151,15 +151,15 @@
 
     <div class="time-banner">
       <div class="time-stat">
-        <div class="num">640+</div>
+        <div class="num">400+</div>
         <div class="label">Developer Hours Saved</div>
       </div>
       <div class="time-stat">
-        <div class="num">16</div>
+        <div class="num">10</div>
         <div class="label">Weeks of Work in Days</div>
       </div>
       <div class="time-stat">
-        <div class="num">97+</div>
+        <div class="num">48+</div>
         <div class="label">PRs Shipped with AI</div>
       </div>
       <div class="time-stat">
@@ -177,19 +177,18 @@
       <!-- App 1 -->
       <div class="app-card">
         <div class="app-header">
-          <div class="app-icon app-icon-1">P</div>
+          <div class="app-icon app-icon-1">B</div>
           <div class="app-info">
-            <h3>QuikSlip Property Management Portal</h3>
-            <p>Admin dashboard for apartment property managers to oversee parking operations. Manages tenants, guest passes with 24-hour auto-expiry, towing requests, staff rosters, violations tracking, and daily activity reports delivered via email.</p>
+            <h3>Birthday Email Automator</h3>
+            <p>Compose and send personalized birthday emails with gift search integration. Import contacts from Google Calendar, Apple Contacts, Outlook, or CSV. Configurable heads-up reminders so you never miss a birthday again.</p>
             <div class="app-tags">
-              <span class="tag">Next.js</span>
-              <span class="tag">React</span>
-              <span class="tag">Tailwind CSS</span>
-              <span class="tag">AWS Amplify</span>
-              <span class="tag">GraphQL</span>
-              <span class="tag">Cognito</span>
-              <span class="tag">DynamoDB</span>
-              <span class="tag">Lambda / SES</span>
+              <span class="tag">HTML / CSS / JS</span>
+              <span class="tag">EmailJS</span>
+              <span class="tag">ICS / vCard Parser</span>
+              <span class="tag">CSV Import</span>
+              <span class="tag">GitHub Pages</span>
+              <span class="tag">AWS S3</span>
+              <span class="tag">localStorage</span>
             </div>
           </div>
           <div class="ai-badge">
@@ -198,18 +197,18 @@
           </div>
         </div>
         <div class="app-stats">
-          <span><span class="stat-dot" style="background:#6366f1"></span> 55+ merged PRs</span>
-          <span><span class="stat-dot" style="background:#22c55e"></span> 7 management modules</span>
-          <span><span class="stat-dot" style="background:#f59e0b"></span> Full CRUD + email reports</span>
+          <span><span class="stat-dot" style="background:#6366f1"></span> Zero dependencies</span>
+          <span><span class="stat-dot" style="background:#22c55e"></span> Multi-format import (ICS, vCard, CSV)</span>
+          <span><span class="stat-dot" style="background:#f59e0b"></span> Email + gift search</span>
         </div>
         <div class="time-saved-row">
           <span class="time-chip">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            ~320 hours saved
+            ~80 hours saved
           </span>
           <span class="time-chip">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            8 weeks of work in 3 days
+            2 weeks of work in 1 session
           </span>
           <span class="time-note">Estimated vs. manual solo development</span>
         </div>
@@ -218,7 +217,7 @@
             <span>View README</span>
             <span class="arrow">&#9660;</span>
           </button>
-          <a class="fork-btn" href="https://github.com/QuikSlip/quikslip_property_management-main/fork" target="_blank" rel="noopener">
+          <a class="fork-btn" href="https://github.com/MatthewDuke1/birthday-reminder-gifting-app/fork" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-.878a2.25 2.25 0 111.5 0v.878a2.25 2.25 0 01-2.25 2.25h-1.5v2.128a2.251 2.251 0 11-1.5 0V8.5h-1.5A2.25 2.25 0 013.5 6.25v-.878a2.25 2.25 0 111.5 0zM5 3.25a.75.75 0 10-1.5 0 .75.75 0 001.5 0zm6.75.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8 12.75a.75.75 0 10-1.5 0 .75.75 0 001.5 0z"/></svg>
             Fork this repo
           </a>
@@ -226,31 +225,53 @@
         <div class="readme-content">
           <div class="readme-inner">
             <h4>Overview</h4>
-            <p>Admin portal for property managers to oversee parking operations at apartment complexes. Backed by AWS Amplify (AppSync, Cognito, DynamoDB, Lambda, SES).</p>
+            <p>A static web app that lets you manage birthday reminders and send personalized emails with gift suggestions. No backend required -- runs entirely in the browser with EmailJS for delivery and localStorage for persistence.</p>
+
             <h4>Key Features</h4>
             <ul>
-              <li><strong>Dashboard</strong> -- Stats cards, daily activity report with email delivery, potential vehicles to tow</li>
-              <li><strong>Guest Passes</strong> -- List, search, tow request (6 reasons), delete, 24-hour auto-expiry with countdown</li>
-              <li><strong>Tenants</strong> -- CRUD with CSV bulk import, search by name/plate/car, permanent records</li>
-              <li><strong>Roster</strong> -- Staff management with role-based filtering and VOIP call button</li>
-              <li><strong>Violations</strong> -- Tracking with license plate anomaly detection (blank, null, special chars)</li>
-              <li><strong>Lots</strong> -- Current property display with pulsing active indicator</li>
-              <li><strong>Notifications</strong> -- Persistent bell icon with mark-as-read, dismiss, clear (localStorage)</li>
+              <li><strong>Email Composer</strong> -- Write and send birthday emails directly from the app via EmailJS</li>
+              <li><strong>ICS / vCard Import</strong> -- Upload <code>.ics</code> or <code>.vcf</code> files from Google Calendar, Apple Contacts, or Outlook</li>
+              <li><strong>CSV Import</strong> -- Flexible column detection, supports multiple date formats (<code>YYYY-MM-DD</code>, <code>MM/DD/YYYY</code>, <code>January 5 1990</code>), downloadable template</li>
+              <li><strong>Gift Search</strong> -- Integrated gift idea lookup for each contact</li>
+              <li><strong>Heads-Up Reminders</strong> -- Configurable advance notifications so you never miss a birthday</li>
+              <li><strong>Settings Tab</strong> -- Configure EmailJS credentials in the UI (no rebuild needed)</li>
+              <li><strong>CSV Export</strong> -- Back up your friends list at any time</li>
+              <li><strong>CORS Error Handling</strong> -- Clear diagnosis with "Open in mail app" fallback</li>
             </ul>
+
             <h4>Tech Stack</h4>
             <table>
               <tr><th>Layer</th><th>Technology</th></tr>
-              <tr><td>Framework</td><td>Next.js 13 (React 18)</td></tr>
-              <tr><td>Styling</td><td>Tailwind CSS 3, Material-UI 5</td></tr>
-              <tr><td>Auth</td><td>AWS Cognito</td></tr>
-              <tr><td>API</td><td>AWS AppSync (GraphQL)</td></tr>
-              <tr><td>Database</td><td>DynamoDB</td></tr>
-              <tr><td>Email</td><td>AWS Lambda + SES</td></tr>
+              <tr><td>Frontend</td><td>Vanilla HTML / CSS / JavaScript (zero dependencies)</td></tr>
+              <tr><td>Email</td><td>EmailJS (public key, service ID, template ID)</td></tr>
+              <tr><td>Storage</td><td>Browser localStorage</td></tr>
+              <tr><td>Import</td><td>ICS parser, vCard parser, CSV parser (all client-side)</td></tr>
+              <tr><td>Hosting</td><td>GitHub Pages or AWS S3</td></tr>
             </table>
+
+            <h4>EmailJS Template Setup</h4>
+            <p>Create a template with these variables: <code>{{to_email}}</code>, <code>{{subject}}</code>, <code>{{message}}</code>, <code>{{to_name}}</code> (optional). That's it.</p>
+
+            <h4>Import Formats</h4>
+            <ul>
+              <li><strong>Google Contacts:</strong> Export as vCard (.vcf)</li>
+              <li><strong>Google Calendar:</strong> Export as .ics</li>
+              <li><strong>Apple Contacts:</strong> File &rarr; Export &rarr; Export vCard</li>
+              <li><strong>Outlook:</strong> File &rarr; Import/Export &rarr; Export to CSV</li>
+              <li><strong>CSV:</strong> Header row with Name, Email, Birthday, Relationship, Notes</li>
+            </ul>
+
             <h4>AI Contribution</h4>
-            <p>55+ pull requests authored with AI-assisted development. Feature implementation, bug diagnosis (e.g., identifying a <code>setTanatData</code> typo causing silent failures), security audits, SEO optimization, and comprehensive documentation -- all delivered in days instead of months.</p>
-            <h4>Quick Start</h4>
-            <div class="cmd-block">git clone https://github.com/QuikSlip/quikslip_property_management-main.git<br/>npm install<br/>npm run dev</div>
+            <p>Entire application designed and built with AI-assisted engineering in a single session. ICS/vCard parsing, CSV column detection with multiple date format support, EmailJS integration with CORS error handling, gift search, and AWS deploy script -- all generated and iterated through AI pair programming.</p>
+
+            <h4>Deploy</h4>
+            <div class="cmd-block">
+              # GitHub Pages: push to main, enable Pages via Settings<br/><br/>
+              # AWS S3:<br/>
+              cp .env.example .env<br/>
+              chmod +x deploy-aws.sh<br/>
+              ./deploy-aws.sh
+            </div>
           </div>
         </div>
       </div>
@@ -410,7 +431,7 @@
   <!-- Footer -->
   <div class="footer">
     <p>Matt Duke &mdash; Dallas, TX &mdash; <a href="https://www.linkedin.com/in/the-duke/">LinkedIn</a> &mdash; <a href="https://github.com/MatthewDuke1">GitHub</a></p>
-    <p style="margin-top:8px;">Built with AI-assisted engineering &mdash; 640+ hours saved</p>
+    <p style="margin-top:8px;">Built with AI-assisted engineering &mdash; 400+ hours saved</p>
   </div>
 
   <script>
