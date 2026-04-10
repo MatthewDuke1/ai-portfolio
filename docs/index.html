@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matt Duke - AI Portfolio</title>
+  <meta name="description" content="AI-powered applications built by Matt Duke. Full-stack engineering with Claude, AWS, and modern web frameworks." />
+  <link rel="icon" href="https://www.quikslip.com/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0a0a0a; color: #fafafa; line-height: 1.6; }
+
+    /* Hero */
+    .hero {
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15) 0%, transparent 60%);
+    }
+    .hero-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #818cf8;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      max-width: 700px;
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #a1a1aa;
+      max-width: 560px;
+      margin-top: 20px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 24px;
+      margin-top: 28px;
+      font-size: 14px;
+      color: #71717a;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-meta a { color: #818cf8; text-decoration: none; }
+    .hero-meta a:hover { text-decoration: underline; }
+
+    /* Container */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* Section */
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #818cf8;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    /* App Cards */
+    .apps { padding: 40px 0 60px; }
+    .app-card {
+      background: #111113;
+      border: 1px solid #27272a;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      transition: border-color 0.3s;
+    }
+    .app-card:hover { border-color: #3f3f46; }
+
+    .app-header {
+      padding: 32px 32px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .app-icon-1 { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+    .app-icon-2 { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
+    .app-icon-3 { background: linear-gradient(135deg, #f59e0b, #f97316); }
+
+    .app-info { flex: 1; min-width: 200px; }
+    .app-info h3 { font-size: 22px; font-weight: 700; }
+    .app-info p { font-size: 15px; color: #a1a1aa; margin-top: 8px; line-height: 1.5; }
+
+    .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag {
+      background: #18181b;
+      border: 1px solid #27272a;
+      color: #a1a1aa;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .app-stats {
+      display: flex;
+      gap: 24px;
+      padding: 0 32px 20px;
+      font-size: 14px;
+      color: #71717a;
+      flex-wrap: wrap;
+    }
+    .app-stats span { display: flex; align-items: center; gap: 6px; }
+    .stat-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* AI Badge */
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.3);
+      color: #a5b4fc;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: auto;
+    }
+
+    /* Dropdown README */
+    .readme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      border-top: 1px solid #27272a;
+      cursor: pointer;
+      user-select: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: #818cf8;
+      transition: background 0.2s;
+    }
+    .readme-toggle:hover { background: #18181b; }
+    .readme-toggle .arrow { transition: transform 0.3s; font-size: 16px; }
+    .readme-toggle.open .arrow { transform: rotate(180deg); }
+
+    .readme-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      border-top: 1px solid #27272a;
+    }
+    .readme-content.open { max-height: 3000px; }
+    .readme-inner {
+      padding: 24px 32px 32px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #d4d4d8;
+    }
+    .readme-inner h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fafafa;
+      margin: 20px 0 8px;
+    }
+    .readme-inner h4:first-child { margin-top: 0; }
+    .readme-inner p { margin-bottom: 12px; }
+    .readme-inner ul { padding-left: 20px; margin-bottom: 12px; }
+    .readme-inner li { margin-bottom: 6px; }
+    .readme-inner code {
+      background: #18181b;
+      border: 1px solid #27272a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #a5b4fc;
+    }
+    .readme-inner .cmd-block {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 12px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #a1a1aa;
+      overflow-x: auto;
+    }
+    .readme-inner table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+    .readme-inner th, .readme-inner td {
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid #27272a;
+      font-size: 13px;
+    }
+    .readme-inner th { color: #fafafa; font-weight: 600; }
+
+    /* Footer */
+    .footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid #18181b;
+      color: #52525b;
+      font-size: 13px;
+    }
+    .footer a { color: #818cf8; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .app-header { padding: 20px; }
+      .app-stats { padding: 0 20px 16px; }
+      .readme-toggle { padding: 14px 20px; }
+      .readme-inner { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-label">AI Engineering Portfolio</div>
+    <h1>Applications Built with AI</h1>
+    <p>Full-stack products designed, developed, and shipped using AI-assisted engineering. Each application demonstrates end-to-end delivery from architecture to deployment.</p>
+    <div class="hero-meta">
+      <span>Matt Duke</span>
+      <span>Dallas, TX</span>
+      <a href="https://www.linkedin.com/in/the-duke/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/MatthewDuke1" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Apps -->
+  <div class="container">
+    <div class="apps">
+      <div class="section-label">Projects</div>
+      <div class="section-title">Featured Applications</div>
+
+      <!-- App 1: QuikSlip Property Management -->
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-icon app-icon-1">P</div>
+          <div class="app-info">
+            <h3>QuikSlip Property Management Portal</h3>
+            <p>Admin dashboard for apartment property managers to oversee parking operations. Manages tenants, guest passes with 24-hour auto-expiry, towing requests, staff rosters, violations tracking, and daily activity reports delivered via email.</p>
+            <div class="app-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">AWS Amplify</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">Cognito</span>
+              <span class="tag">DynamoDB</span>
+              <span class="tag">Lambda / SES</span>
+            </div>
+          </div>
+          <div class="ai-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            AI-Assisted
+          </div>
+        </div>
+        <div class="app-stats">
+          <span><span class="stat-dot" style="background:#6366f1"></span> 55+ merged PRs</span>
+          <span><span class="stat-dot" style="background:#22c55e"></span> 7 management modules</span>
+          <span><span class="stat-dot" style="background:#f59e0b"></span> Full CRUD + email reports</span>
+        </div>
+        <div class="readme-toggle" onclick="toggleReadme(this)">
+          <span>View README</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="readme-content">
+          <div class="readme-inner">
+            <h4>Overview</h4>
+            <p>Admin portal for property managers to oversee parking operations at apartment complexes. Backed by AWS Amplify (AppSync, Cognito, DynamoDB, Lambda, SES).</p>
+
+            <h4>Key Features</h4>
+            <ul>
+              <li><strong>Dashboard</strong> -- Stats cards, daily activity report with email delivery, potential vehicles to tow</li>
+              <li><strong>Guest Passes</strong> -- List, search, tow request (6 reasons), delete, 24-hour auto-expiry with countdown</li>
+              <li><strong>Tenants</strong> -- CRUD with CSV bulk import, search by name/plate/car, permanent records</li>
+              <li><strong>Roster</strong> -- Staff management with role-based filtering and VOIP call button</li>
+              <li><strong>Violations</strong> -- Tracking with license plate anomaly detection (blank, null, special chars)</li>
+              <li><strong>Lots</strong> -- Current property display with pulsing active indicator</li>
+              <li><strong>Settings</strong> -- Account management, property info with role dropdown, in-app + email notification preferences</li>
+              <li><strong>Notifications</strong> -- Persistent bell icon notifications with mark-as-read, dismiss, and clear (localStorage)</li>
+            </ul>
+
+            <h4>Tech Stack</h4>
+            <table>
+              <tr><th>Layer</th><th>Technology</th></tr>
+              <tr><td>Framework</td><td>Next.js 13 (React 18)</td></tr>
+              <tr><td>Styling</td><td>Tailwind CSS 3, Material-UI 5</td></tr>
+              <tr><td>Auth</td><td>AWS Cognito</td></tr>
+              <tr><td>API</td><td>AWS AppSync (GraphQL)</td></tr>
+              <tr><td>Database</td><td>DynamoDB</td></tr>
+              <tr><td>Email</td><td>AWS Lambda + SES</td></tr>
+            </table>
+
+            <h4>AI Contribution</h4>
+            <p>55+ pull requests were authored with AI-assisted development using Claude. This includes feature implementation, bug diagnosis (e.g., identifying a <code>setTanatData</code> typo causing silent failures), security audits, SEO optimization, and comprehensive documentation.</p>
+
+            <h4>Quick Start</h4>
+            <div class="cmd-block">
+              git clone [repo-url]<br/>
+              npm install<br/>
+              npm run dev
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- App 2: QuikSlip Guest Application -->
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-icon app-icon-2">G</div>
+          <div class="app-info">
+            <h3>QuikSlip Guest Portal</h3>
+            <p>Mobile and web application for apartment tenants and visitors. Tenants register vehicles and share access codes. Guests enter a code and vehicle info to receive a digital parking pass in under 30 seconds -- no app download required.</p>
+            <div class="app-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">Expo</span>
+              <span class="tag">AWS Amplify</span>
+              <span class="tag">AppSync</span>
+              <span class="tag">Cognito</span>
+              <span class="tag">NHTSA API</span>
+              <span class="tag">EventBridge</span>
+            </div>
+          </div>
+          <div class="ai-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            AI-Assisted
+          </div>
+        </div>
+        <div class="app-stats">
+          <span><span class="stat-dot" style="background:#0ea5e9"></span> 17+ merged PRs</span>
+          <span><span class="stat-dot" style="background:#22c55e"></span> Cross-platform (iOS, Android, Web)</span>
+          <span><span class="stat-dot" style="background:#f59e0b"></span> Real-time subscriptions</span>
+        </div>
+        <div class="readme-toggle" onclick="toggleReadme(this)">
+          <span>View README</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="readme-content">
+          <div class="readme-inner">
+            <h4>Overview</h4>
+            <p>Guest-facing application where tenants register vehicles and visitors obtain digital parking passes through a simple 2-step process. Built with React Native + Expo for cross-platform deployment.</p>
+
+            <h4>Key Features</h4>
+            <ul>
+              <li><strong>Guest Parking Passes</strong> -- 2-step issuance: enter access code, submit vehicle info</li>
+              <li><strong>Email Confirmations</strong> -- Passes emailed to guests via Lambda/SES</li>
+              <li><strong>Expiry Notifications</strong> -- EventBridge-triggered alerts when passes approach expiry</li>
+              <li><strong>Tenant Vehicle Registration</strong> -- Register primary and secondary vehicles</li>
+              <li><strong>Car Autocomplete</strong> -- Make/model suggestions via NHTSA vPIC API</li>
+              <li><strong>License Plate Validation</strong> -- Format enforcement across all forms</li>
+              <li><strong>Real-time Subscriptions</strong> -- Live updates via AppSync subscriptions</li>
+              <li><strong>Responsive Design</strong> -- Optimized for mobile and desktop viewports</li>
+            </ul>
+
+            <h4>Data Models (GraphQL)</h4>
+            <table>
+              <tr><th>Model</th><th>Purpose</th></tr>
+              <tr><td>User</td><td>Tenant account with property association</td></tr>
+              <tr><td>Tenant</td><td>Registered occupant with vehicles</td></tr>
+              <tr><td>Guest</td><td>Visitor with active parking pass</td></tr>
+              <tr><td>GuestProfile</td><td>Extended guest information</td></tr>
+              <tr><td>Car</td><td>Vehicle record (make, model, plate)</td></tr>
+            </table>
+
+            <h4>AI Contribution</h4>
+            <p>AI-assisted development for license plate validation logic, car autocomplete integration with the NHTSA API, responsive layout optimization, security improvements (removing credential logging, XSS prevention in email templates), and documentation.</p>
+
+            <h4>Quick Start</h4>
+            <div class="cmd-block">
+              git clone [repo-url]<br/>
+              npm install<br/>
+              npx expo start
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- App 3: QuikSlip Registration -->
+      <div class="app-card">
+        <div class="app-header">
+          <div class="app-icon app-icon-3">R</div>
+          <div class="app-info">
+            <h3>QuikSlip Registration Wizard</h3>
+            <p>6-step onboarding wizard for new property managers. Collects personal details, complex information, and parking configuration, then provisions user accounts via AWS Cognito and stores property data in DynamoDB. Includes email verification and Stripe payment redirect.</p>
+            <div class="app-tags">
+              <span class="tag">React</span>
+              <span class="tag">Material-UI</span>
+              <span class="tag">React Hook Form</span>
+              <span class="tag">Yup</span>
+              <span class="tag">AWS Cognito</span>
+              <span class="tag">AppSync</span>
+              <span class="tag">Stripe</span>
+            </div>
+          </div>
+          <div class="ai-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            AI-Assisted
+          </div>
+        </div>
+        <div class="app-stats">
+          <span><span class="stat-dot" style="background:#f59e0b"></span> 25+ merged PRs</span>
+          <span><span class="stat-dot" style="background:#22c55e"></span> 6-step wizard with rollback</span>
+          <span><span class="stat-dot" style="background:#ef4444"></span> Full validation + error recovery</span>
+        </div>
+        <div class="readme-toggle" onclick="toggleReadme(this)">
+          <span>View README</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="readme-content">
+          <div class="readme-inner">
+            <h4>Overview</h4>
+            <p>Multi-step registration form for apartment complex managers to onboard their properties onto the platform. Provisions user accounts via AWS Cognito and stores property data in DynamoDB through AppSync.</p>
+
+            <h4>Registration Flow</h4>
+            <table>
+              <tr><th>Step</th><th>Screen</th><th>Details</th></tr>
+              <tr><td>1</td><td>Personal Info</td><td>Name, email (duplicate check), phone, password</td></tr>
+              <tr><td>2</td><td>Complex Info</td><td>Complex name, address, unit count, contact info, image upload</td></tr>
+              <tr><td>3</td><td>Parking Config</td><td>Total spots, tenant/guest/admin/handicap allocation with total validation</td></tr>
+              <tr><td>4</td><td>Review</td><td>Confirmation of all data. On submit: creates User, signs up in Cognito, creates Tenant</td></tr>
+              <tr><td>5</td><td>Verify Email</td><td>Enter Cognito confirmation code</td></tr>
+              <tr><td>6</td><td>Complete</td><td>Success message with Stripe payment redirect</td></tr>
+            </table>
+
+            <h4>Orchestration with Rollback</h4>
+            <p>The submit handler on Step 4 performs a multi-step orchestration:</p>
+            <ul>
+              <li>Create User record in AppSync (DynamoDB)</li>
+              <li>Sign up user in AWS Cognito</li>
+              <li>Update User with Cognito ID</li>
+              <li>Create Tenant record</li>
+              <li>Post to Google Sheets (optional CRM logging)</li>
+              <li><strong>If any step fails, all previous operations are rolled back</strong></li>
+            </ul>
+
+            <h4>Validation</h4>
+            <ul>
+              <li><strong>Name:</strong> Letters only, sanitized on input</li>
+              <li><strong>Email:</strong> Regex validated, checked for existing accounts via GraphQL query</li>
+              <li><strong>Phone:</strong> 10-15 digits, optional + prefix</li>
+              <li><strong>Password:</strong> Min 8 characters, must match confirmation</li>
+              <li><strong>Parking:</strong> Total allocated cannot exceed total spots</li>
+            </ul>
+
+            <h4>AI Contribution</h4>
+            <p>AI-assisted development for form UX consistency, responsive redesign of the confirmation page, license plate validation, car autocomplete via NHTSA API, security improvements (removing hardcoded Cognito IDs), dead code cleanup, and comprehensive documentation.</p>
+
+            <h4>Quick Start</h4>
+            <div class="cmd-block">
+              git clone [repo-url]<br/>
+              npm install<br/>
+              npm start
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Matt Duke &mdash; Dallas, TX &mdash; <a href="https://www.linkedin.com/in/the-duke/">LinkedIn</a> &mdash; <a href="https://github.com/MatthewDuke1">GitHub</a></p>
+    <p style="margin-top:8px;">Built with AI-assisted engineering</p>
+  </div>
+
+  <script>
+    function toggleReadme(el) {
+      el.classList.toggle('open');
+      el.nextElementSibling.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
