@@ -41,6 +41,16 @@
     .time-stat .label { font-size: 12px; color: #71717a; margin-top: 2px; }
 
     .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* At a Glance */
+    .glance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .glance-card {
+      background: #111113; border: 1px solid #27272a; border-radius: 12px;
+      padding: 24px; text-align: center; transition: border-color 0.2s;
+    }
+    .glance-card:hover { border-color: #818cf8; }
+    .glance-number { font-size: 36px; font-weight: 800; color: #818cf8; }
+    .glance-label { font-size: 13px; color: #71717a; margin-top: 4px; }
     .section-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #818cf8; margin-bottom: 8px; }
     .section-title { font-size: 28px; font-weight: 700; margin-bottom: 32px; }
 
@@ -133,6 +143,7 @@
       .action-bar { padding: 12px 20px; }
       .readme-inner { padding: 20px; }
       .time-banner { padding: 20px; gap: 20px; }
+      .glance-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -158,17 +169,38 @@
         <div class="label">Weeks of Work in Days</div>
       </div>
       <div class="time-stat">
-        <div class="num">48+</div>
-        <div class="label">PRs Shipped with AI</div>
-      </div>
-      <div class="time-stat">
         <div class="num">3</div>
         <div class="label">Production Apps</div>
       </div>
     </div>
   </div>
 
+  <!-- At a Glance -->
   <div class="container">
+    <div style="padding: 40px 0 0;">
+      <div class="section-label">At a Glance</div>
+      <div class="section-title">GitHub Activity</div>
+      <div class="glance-grid">
+        <div class="glance-card">
+          <div class="glance-number">109</div>
+          <div class="glance-label">Merged Pull Requests</div>
+        </div>
+        <div class="glance-card">
+          <div class="glance-number">213+</div>
+          <div class="glance-label">Commits</div>
+        </div>
+        <div class="glance-card">
+          <div class="glance-number">10</div>
+          <div class="glance-label">Active Repositories</div>
+        </div>
+        <div class="glance-card">
+          <div class="glance-number">8,000+</div>
+          <div class="glance-label">Lines Changed</div>
+        </div>
+      </div>
+      <p style="font-size:12px; color:#52525b; margin-top:12px;">Most contributions are in private/internal repositories and don't appear on the public GitHub graph. <a href="https://matthewduke1.github.io/github-activity/" target="_blank" rel="noopener" style="color:#818cf8;">View full activity breakdown</a></p>
+    </div>
+
     <div class="apps">
       <div class="section-label">Projects</div>
       <div class="section-title">Featured Applications</div>
