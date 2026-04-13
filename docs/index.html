@@ -68,6 +68,27 @@
     .app-info p { font-size: 15px; color: #a1a1aa; margin-top: 8px; line-height: 1.5; }
     .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
     .tag { background: #18181b; border: 1px solid #27272a; color: #a1a1aa; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+    .promo-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, rgba(251,191,36,0.12), rgba(251,191,36,0.04));
+      border: 1px solid rgba(251,191,36,0.35);
+      color: #fbbf24;
+      padding: 8px 14px; border-radius: 24px;
+      font-size: 12px; font-weight: 700;
+      margin-top: 14px;
+    }
+    .promo-badge .pulse-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #fbbf24;
+      box-shadow: 0 0 0 0 rgba(251,191,36,0.7);
+      animation: promo-pulse 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes promo-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(251,191,36,0.6); }
+      70% { box-shadow: 0 0 0 8px rgba(251,191,36,0); }
+      100% { box-shadow: 0 0 0 0 rgba(251,191,36,0); }
+    }
 
     /* Stats row */
     .app-stats { display: flex; gap: 24px; padding: 0 32px 12px; font-size: 14px; color: #71717a; flex-wrap: wrap; }
@@ -311,6 +332,10 @@
               <span class="tag">DOM Scanning</span>
               <span class="tag">Schema.org Parser</span>
               <span class="tag">Zero Tracking</span>
+            </div>
+            <div class="promo-badge">
+              <span class="pulse-dot"></span>
+              Actively being reviewed by Google &mdash; v1.0.0 coming soon
             </div>
           </div>
         </div>
