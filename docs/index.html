@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matt Duke &mdash; Mini Apps</title>
-  <meta name="description" content="Mini apps by Matt Duke -- a browser extension that surfaces hidden customer service contacts, a birthday email automator, and a curated AI tool guide. Free and open source." />
+  <title>Matt Duke &mdash; Product manager who ships</title>
+  <meta name="description" content="Matt Duke builds small, useful software: Sula (a browser extension for refunds and reaching real support humans), a birthday email automator, and a curated AI tool guide. Free and open source." />
   <meta name="author" content="Matt Duke" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#08090C" />
   <link rel="canonical" href="https://the-duke.org/" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,&lt;svg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 64 64&apos;&gt;&lt;rect width=&apos;64&apos; height=&apos;64&apos; rx=&apos;12&apos; fill=&apos;%230a0a0a&apos;/&gt;&lt;text x=&apos;50%25&apos; y=&apos;50%25&apos; dominant-baseline=&apos;central&apos; text-anchor=&apos;middle&apos; font-family=&apos;Inter,-apple-system,sans-serif&apos; font-size=&apos;36&apos; font-weight=&apos;800&apos; fill=&apos;%23a5b4fc&apos;&gt;D&lt;/text&gt;&lt;/svg&gt;" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,&lt;svg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 64 64&apos;&gt;&lt;rect width=&apos;64&apos; height=&apos;64&apos; rx=&apos;14&apos; fill=&apos;%2308090C&apos;/&gt;&lt;text x=&apos;50%25&apos; y=&apos;52%25&apos; dominant-baseline=&apos;central&apos; text-anchor=&apos;middle&apos; font-family=&apos;Inter,-apple-system,sans-serif&apos; font-size=&apos;34&apos; font-weight=&apos;700&apos; fill=&apos;%23A5B4FC&apos;&gt;MD&lt;/text&gt;&lt;/svg&gt;" />
 
-  <meta property="og:title" content="Matt Duke &mdash; Mini Apps" />
-  <meta property="og:description" content="A browser extension, a birthday email automator, and a curated AI tool guide. Free and open source." />
+  <meta property="og:title" content="Matt Duke &mdash; Product manager who ships" />
+  <meta property="og:description" content="Small, useful software: a refund &amp; support-contact extension, a birthday email automator, and a curated AI tool guide." />
   <meta property="og:url" content="https://the-duke.org/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="the-duke.org" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Matt Duke &mdash; Mini Apps" />
-  <meta name="twitter:description" content="A browser extension, a birthday email automator, and a curated AI tool guide. Free and open source." />
+  <meta name="twitter:title" content="Matt Duke &mdash; Product manager who ships" />
+  <meta name="twitter:description" content="Small, useful software: a refund &amp; support-contact extension, a birthday email automator, and a curated AI tool guide." />
 
   <script type="application/ld+json">
   {
@@ -25,7 +25,7 @@
     "@type": "Person",
     "name": "Matt Duke",
     "url": "https://the-duke.org/",
-    "jobTitle": "Software Engineer",
+    "jobTitle": "Director of Product",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Dallas",
@@ -39,263 +39,305 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', -apple-system, sans-serif; background: #0a0a0a; color: #fafafa; line-height: 1.6; }
-
-    /* Hero */
-    .hero {
-      min-height: 50vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 60px 20px 40px;
-      background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15) 0%, transparent 60%);
+    :root {
+      --bg:        #08090C;
+      --panel:     #0E1015;
+      --panel-2:   #12151C;
+      --line:      #1D212B;
+      --line-2:    #2B313E;
+      --fg:        #F4F6FA;
+      --fg-dim:    #98A1B3;
+      --fg-faint:  #646E82;
+      --iris:      #8B93FF;
+      --iris-soft: rgba(139,147,255,0.10);
+      --iris-edge: rgba(139,147,255,0.28);
+      --mint:      #5EE9B5;
+      --amber:     #FBBF24;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --maxw: 1120px;
     }
-    .hero-label { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #818cf8; margin-bottom: 16px; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+      background:var(--bg); color:var(--fg); line-height:1.6;
+      -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    }
+    a { color:var(--iris); text-decoration:none; }
+    .wrap { max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+    section[id] { scroll-margin-top:96px; }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      position:sticky; top:0; z-index:50;
+      background:rgba(8,9,12,0.82);
+      backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-in { max-width:var(--maxw); margin:0 auto; padding:14px 28px;
+      display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:-0.01em; color:var(--fg); }
+    .brand .mark {
+      width:28px; height:28px; border-radius:8px; display:grid; place-items:center;
+      background:var(--iris-soft); border:1px solid var(--iris-edge);
+      color:var(--iris); font-size:12px; font-weight:700; font-family:var(--mono);
+    }
+    .nav-links { display:flex; align-items:center; gap:26px; font-size:14px; }
+    .nav-links a { color:var(--fg-dim); }
+    .nav-links a:hover { color:var(--fg); }
+    .nav-cta {
+      padding:8px 15px; border-radius:9px; font-weight:600; font-size:14px;
+      background:var(--iris); color:#0A0B10 !important;
+    }
+    .nav-cta:hover { background:#A5ABFF; }
+
+    /* ---------- Hero (asymmetric, left-aligned) ---------- */
+    .hero { position:relative; padding:96px 0 72px; border-bottom:1px solid var(--line); }
+    .hero::before {
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:radial-gradient(760px 380px at 12% -8%, rgba(139,147,255,0.10), transparent 64%);
+    }
+    .hero-grid {
+      position:relative; display:grid; grid-template-columns:1.15fr 0.85fr;
+      gap:56px; align-items:center;
+    }
+    .kicker {
+      display:inline-flex; align-items:center; gap:8px; font-family:var(--mono);
+      font-size:12px; color:var(--iris); letter-spacing:0.04em;
+      border:1px solid var(--iris-edge); background:var(--iris-soft);
+      padding:5px 11px; border-radius:999px; margin-bottom:22px;
+    }
+    .kicker .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); }
     .hero h1 {
-      font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; max-width: 700px;
-      color: #fafafa; letter-spacing: -1px;
+      font-size:clamp(38px,5.1vw,60px); font-weight:800; line-height:1.05;
+      letter-spacing:-0.035em; text-wrap:balance;
     }
-    .hero p { font-size: 18px; color: #a1a1aa; max-width: 560px; margin-top: 20px; }
-    .hero-meta { display: flex; gap: 24px; margin-top: 28px; font-size: 14px; color: #71717a; flex-wrap: wrap; justify-content: center; }
-    .hero-meta a { color: #818cf8; text-decoration: none; }
-    .hero-meta a:hover { text-decoration: underline; }
+    .hero h1 em { font-style:normal; color:var(--iris); }
+    .hero .lede { margin-top:20px; font-size:18px; color:var(--fg-dim); max-width:52ch; }
+    .hero-actions { display:flex; gap:12px; margin-top:30px; flex-wrap:wrap; }
+    .btn {
+      display:inline-flex; align-items:center; gap:9px;
+      padding:11px 18px; border-radius:10px; font-weight:600; font-size:15px;
+      border:1px solid transparent; transition:background .16s, border-color .16s, color .16s;
+    }
+    .btn-solid { background:var(--iris); color:#0A0B10; }
+    .btn-solid:hover { background:#A5ABFF; }
+    .btn-ghost { border-color:var(--line-2); color:var(--fg); }
+    .btn-ghost:hover { border-color:var(--iris); color:var(--iris); }
+    .hero-meta { margin-top:26px; display:flex; gap:18px; flex-wrap:wrap;
+      font-size:13.5px; color:var(--fg-faint); align-items:center; }
+    .hero-meta .sep { width:3px; height:3px; border-radius:50%; background:var(--line-2); }
 
-    /* Time Saved Banner */
-    .time-banner {
-      display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
-      margin-top: 40px; padding: 24px 32px;
-      background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.15);
-      border-radius: 16px; max-width: 700px;
+    /* terminal card */
+    .term {
+      background:var(--panel); border:1px solid var(--line); border-radius:14px;
+      overflow:hidden; box-shadow:0 24px 60px -30px rgba(0,0,0,0.9);
     }
-    .time-stat { text-align: center; }
-    .time-stat .num { font-size: 32px; font-weight: 800; color: #818cf8; }
-    .time-stat .label { font-size: 12px; color: #71717a; margin-top: 2px; }
+    .term-bar { display:flex; align-items:center; gap:7px; padding:11px 14px;
+      border-bottom:1px solid var(--line); background:var(--panel-2); }
+    .term-bar i { width:10px; height:10px; border-radius:50%; background:var(--line-2); display:block; }
+    .term-bar span { margin-left:8px; font-family:var(--mono); font-size:11.5px; color:var(--fg-faint); }
+    .term-body { padding:16px 18px; font-family:var(--mono); font-size:12.5px; line-height:1.85; }
+    .term-body .c { color:var(--fg-faint); }
+    .term-body .p { color:var(--mint); }
+    .term-body .k { color:var(--iris); }
+    .term-body .v { color:var(--fg); }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    /* ---------- Stats ---------- */
+    .stats { padding:56px 0; border-bottom:1px solid var(--line); }
+    .stat-head { display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:26px; }
+    .eyebrow { font-family:var(--mono); font-size:12px; letter-spacing:0.08em;
+      text-transform:uppercase; color:var(--fg-faint); }
+    h2.sec { font-size:26px; font-weight:700; letter-spacing:-0.02em; }
+    .stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+      background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+    .stat { background:var(--panel); padding:24px 22px; }
+    .stat .n { font-family:var(--mono); font-size:32px; font-weight:500;
+      color:var(--fg); letter-spacing:-0.02em; font-feature-settings:"tnum" 1; }
+    .stat .l { margin-top:6px; font-size:13px; color:var(--fg-dim); }
+    .stat-note { margin-top:14px; font-size:12.5px; color:var(--fg-faint); }
 
-    /* At a Glance */
-    .glance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .glance-card {
-      background: #111113; border: 1px solid #27272a; border-radius: 12px;
-      padding: 24px; text-align: center; transition: border-color 0.2s;
+    /* ---------- Work ---------- */
+    .work { padding:64px 0 40px; }
+    .card {
+      border:1px solid var(--line); border-radius:16px; background:var(--panel);
+      overflow:hidden; margin-bottom:22px; transition:border-color .18s;
     }
-    .glance-card:hover { border-color: #818cf8; }
-    .glance-number { font-size: 36px; font-weight: 800; color: #818cf8; }
-    .glance-label { font-size: 13px; color: #71717a; margin-top: 4px; }
-    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #818cf8; margin-bottom: 8px; }
-    .section-title { font-size: 28px; font-weight: 700; margin-bottom: 32px; }
+    .card:hover { border-color:var(--line-2); }
+    .card-top { padding:26px 26px 20px; display:grid; grid-template-columns:auto 1fr; gap:18px; }
+    .card-ico {
+      width:44px; height:44px; border-radius:11px; display:grid; place-items:center;
+      background:var(--iris-soft); border:1px solid var(--iris-edge); color:var(--iris);
+    }
+    .card-ico svg { width:21px; height:21px; }
+    .card-ico.mint { background:rgba(94,233,181,0.10); border-color:rgba(94,233,181,0.28); color:var(--mint); }
+    .card-ico.amber { background:rgba(251,191,36,0.10); border-color:rgba(251,191,36,0.28); color:var(--amber); }
+    .card-title { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+    .card-title h3 { font-size:20px; font-weight:700; letter-spacing:-0.02em; }
+    .pill {
+      font-family:var(--mono); font-size:11px; padding:3px 9px; border-radius:999px;
+      border:1px solid var(--line-2); color:var(--fg-dim);
+    }
+    .pill.live { color:var(--mint); border-color:rgba(94,233,181,0.35); background:rgba(94,233,181,0.08); }
+    .card-top p { margin-top:9px; font-size:15px; color:var(--fg-dim); max-width:70ch; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+    .tags span { font-family:var(--mono); font-size:11.5px; color:var(--fg-faint);
+      border:1px solid var(--line); background:var(--panel-2); padding:4px 9px; border-radius:7px; }
+    .facts { display:flex; flex-wrap:wrap; gap:8px 22px; padding:0 26px 18px;
+      font-size:13px; color:var(--fg-dim); }
+    .facts b { color:var(--mint); font-weight:600; }
+    .card-foot {
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:14px 26px; border-top:1px solid var(--line); background:var(--panel-2); flex-wrap:wrap;
+    }
+    .lnk { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; }
+    .lnk.muted { color:var(--fg-dim); background:none; border:1px solid var(--line-2);
+      padding:8px 13px; border-radius:9px; cursor:pointer; font-family:inherit; }
+    .lnk.muted:hover { color:var(--fg); border-color:var(--fg-faint); }
+    .arrow { transition:transform .2s; display:inline-block; font-size:10px; }
+    .open .arrow { transform:rotate(180deg); }
 
-    /* App Cards */
-    .apps { padding: 40px 0 60px; }
-    .app-card { background: #111113; border: 1px solid #27272a; border-radius: 16px; overflow: hidden; margin-bottom: 32px; transition: border-color 0.3s; }
-    .app-card:hover { border-color: #3f3f46; }
-    .app-header { padding: 32px 32px 24px; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
-    .app-icon {
-      width: 56px; height: 56px; border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; font-weight: 700; flex-shrink: 0;
-      background: #18181b; border: 1px solid #27272a;
-    }
-    .app-icon-1 { color: #a5b4fc; }
-    .app-icon-2 { color: #67e8f9; }
-    .app-icon-3 { color: #fdba74; }
-    .app-info { flex: 1; min-width: 200px; }
-    .app-info h3 { font-size: 22px; font-weight: 700; }
-    .app-info p { font-size: 15px; color: #a1a1aa; margin-top: 8px; line-height: 1.5; }
-    .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .tag { background: #18181b; border: 1px solid #27272a; color: #a1a1aa; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
-    .promo-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, rgba(251,191,36,0.12), rgba(251,191,36,0.04));
-      border: 1px solid rgba(251,191,36,0.35);
-      color: #fbbf24;
-      padding: 8px 14px; border-radius: 24px;
-      font-size: 12px; font-weight: 700;
-      margin-top: 14px;
-    }
-    .promo-badge .pulse-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: #fbbf24; flex-shrink: 0;
-    }
+    .readme { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+    .readme.open { max-height:2600px; }
+    .readme-in { padding:24px 26px 28px; border-top:1px solid var(--line); font-size:14.5px; color:var(--fg-dim); }
+    .readme-in h4 { color:var(--fg); font-size:15px; font-weight:700; margin:20px 0 8px; letter-spacing:-0.01em; }
+    .readme-in h4:first-child { margin-top:0; }
+    .readme-in ul { margin:0 0 6px 20px; }
+    .readme-in li { margin-bottom:5px; }
+    .readme-in p { margin-bottom:10px; }
+    .readme-in code { font-family:var(--mono); font-size:12.5px; color:var(--iris);
+      background:var(--panel-2); border:1px solid var(--line); padding:1px 5px; border-radius:5px; }
+    .readme-in table { width:100%; border-collapse:collapse; margin:8px 0 12px; font-size:13.5px; }
+    .readme-in th, .readme-in td { text-align:left; padding:7px 10px; border-bottom:1px solid var(--line); }
+    .readme-in th { color:var(--fg); font-weight:600; }
+    .readme-in strong { color:var(--fg); }
 
-    /* Feature row -- restrained: single subtle divider, no decorative dots */
-    .app-stats { display: flex; gap: 18px; padding: 0 32px 12px; font-size: 13px; color: #a1a1aa; flex-wrap: wrap; }
-    .app-stats span { display: inline-block; }
-    .app-stats span + span::before { content: "·"; color: #3f3f46; margin-right: 18px; }
+    /* ---------- Footer ---------- */
+    .foot { border-top:1px solid var(--line); padding:34px 0 46px; margin-top:30px; }
+    .foot-in { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      font-size:13.5px; color:var(--fg-faint); }
+    .foot a { color:var(--fg-dim); }
+    .foot a:hover { color:var(--fg); }
 
-    /* Time Saved row */
-    .time-saved-row {
-      display: flex; gap: 16px; padding: 12px 32px 20px; flex-wrap: wrap; align-items: center;
+    @media (max-width:900px) {
+      .hero { padding:64px 0 52px; }
+      .hero-grid { grid-template-columns:1fr; gap:40px; }
+      .stat-grid { grid-template-columns:repeat(2,1fr); }
+      .nav-links a:not(.nav-cta) { display:none; }
     }
-    .time-chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
-      color: #4ade80; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600;
+    @media (max-width:560px) {
+      .wrap, .nav-in { padding-left:20px; padding-right:20px; }
+      .card-top { grid-template-columns:1fr; }
+      .card-foot { flex-direction:column; align-items:stretch; }
+      .card-foot .lnk { justify-content:center; }
     }
-    .time-chip svg { flex-shrink: 0; }
-    .time-note { font-size: 12px; color: #52525b; }
-
-    /* AI Badge */
-    .ai-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3);
-      color: #a5b4fc; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-left: auto;
-    }
-
-    /* Action bar */
-    .action-bar {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 12px 32px; border-top: 1px solid #27272a; gap: 12px; flex-wrap: wrap;
-    }
-    .fork-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #818cf8; color: #fff; border: none; padding: 10px 20px;
-      border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
-      transition: background 0.2s; text-decoration: none;
-    }
-    .fork-btn:hover { background: #6366f1; }
-    .fork-btn svg { flex-shrink: 0; }
-    .readme-toggle-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: transparent; border: 1px solid #27272a; color: #818cf8;
-      padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .readme-toggle-btn:hover { background: #18181b; }
-    .readme-toggle-btn .arrow { transition: transform 0.3s; }
-    .readme-toggle-btn.open .arrow { transform: rotate(180deg); }
-
-    /* README dropdown */
-    .readme-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; border-top: 1px solid #27272a; }
-    .readme-content.open { max-height: 3000px; }
-    .readme-inner { padding: 24px 32px 32px; font-size: 14px; line-height: 1.7; color: #d4d4d8; }
-    .readme-inner h4 { font-size: 16px; font-weight: 700; color: #fafafa; margin: 20px 0 8px; }
-    .readme-inner h4:first-child { margin-top: 0; }
-    .readme-inner p { margin-bottom: 12px; }
-    .readme-inner ul { padding-left: 20px; margin-bottom: 12px; }
-    .readme-inner li { margin-bottom: 6px; }
-    .readme-inner code { background: #18181b; border: 1px solid #27272a; padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #a5b4fc; }
-    .readme-inner .cmd-block { background: #18181b; border: 1px solid #27272a; border-radius: 8px; padding: 16px; margin: 12px 0; font-family: 'Courier New', monospace; font-size: 13px; color: #a1a1aa; overflow-x: auto; }
-    .readme-inner table { width: 100%; border-collapse: collapse; margin: 12px 0; }
-    .readme-inner th, .readme-inner td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #27272a; font-size: 13px; }
-    .readme-inner th { color: #fafafa; font-weight: 600; }
-
-    /* Footer */
-    .footer { padding: 40px 0; text-align: center; border-top: 1px solid #18181b; color: #52525b; font-size: 13px; }
-    .footer a { color: #818cf8; text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 640px) {
-      .app-header { padding: 20px; }
-      .app-stats { padding: 0 20px 8px; }
-      .time-saved-row { padding: 8px 20px 16px; }
-      .action-bar { padding: 12px 20px; }
-      .readme-inner { padding: 20px; }
-      .time-banner { padding: 20px; gap: 20px; }
-      .glance-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (prefers-reduced-motion:reduce) {
+      * { transition-duration:.001ms !important; }
+      html { scroll-behavior:auto; }
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <h1>Matt's Mini Apps</h1>
-    <p>I design the things you aren't thinking about or don't venture to try. Apps should be stupid simple to pick up and put down.</p>
-    <div class="hero-meta">
-      <span>Matt Duke</span>
-      <span>Dallas, TX</span>
-      <a href="https://www.linkedin.com/in/the-duke/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/MatthewDuke1" target="_blank" rel="noopener">GitHub</a>
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="#top"><span class="mark">MD</span> Matt Duke</a>
+      <nav class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#activity">Activity</a>
+        <a href="https://www.linkedin.com/in/the-duke/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="nav-cta" href="https://github.com/MatthewDuke1" target="_blank" rel="noopener">GitHub</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="time-banner">
-      <div class="time-stat">
-        <div class="num">170</div>
-        <div class="label">Hours saved per year</div>
-      </div>
-      <div class="time-stat">
-        <div class="num">100</div>
-        <div class="label">AI tools curated</div>
-      </div>
-    </div>
-  </div>
+  <main id="top">
 
-  <!-- At a Glance -->
-  <div class="container">
-    <div style="padding: 40px 0 0; text-align: center;">
-      <div class="section-title">Recent public activity</div>
-      <div class="glance-grid">
-        <div class="glance-card">
-          <div class="glance-number">109</div>
-          <div class="glance-label">Pull requests merged</div>
-        </div>
-        <div class="glance-card">
-          <div class="glance-number">213</div>
-          <div class="glance-label">Commits</div>
-        </div>
-        <div class="glance-card">
-          <div class="glance-number">10</div>
-          <div class="glance-label">Active repositories</div>
-        </div>
-        <div class="glance-card">
-          <div class="glance-number">~8,000</div>
-          <div class="glance-label">Lines changed</div>
-        </div>
-      </div>
-      <p style="font-size:12px; color:#52525b; margin-top:12px;">Public repos only; private and client work isn't shown.</p>
-    </div>
-
-    <div class="apps">
-      <div class="section-title" style="text-align: center;">Mini apps</div>
-
-      <!-- App 1 -->
-      <div class="app-card">
-        <div class="app-header">
-          <div class="app-icon app-icon-1">B</div>
-          <div class="app-info">
-            <h3>Birthday Email Automator</h3>
-            <p>Compose and send personalized birthday emails with gift search integration. Import contacts from Google Calendar, Apple Contacts, Outlook, or CSV. Configurable heads-up reminders so you never miss a birthday again.</p>
-            <div class="app-tags">
-              <span class="tag">HTML / CSS / JS</span>
-              <span class="tag">EmailJS</span>
-              <span class="tag">ICS / vCard Parser</span>
-              <span class="tag">CSV Import</span>
-              <span class="tag">GitHub Pages</span>
-              <span class="tag">AWS S3</span>
-              <span class="tag">localStorage</span>
-            </div>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="kicker"><span class="dot"></span> Dallas, TX &middot; shipping weekly</span>
+          <h1>I build small software that <em>gives people their time back</em>.</h1>
+          <p class="lede">Product manager by trade, builder by habit. I design the things you aren't thinking about or don't venture to try &mdash; and they should be stupid simple to pick up and put down.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#work">See what I've shipped</a>
+            <a class="btn btn-ghost" href="https://github.com/MatthewDuke1" target="_blank" rel="noopener">GitHub profile</a>
+          </div>
+          <div class="hero-meta">
+            <span>Matt Duke</span><span class="sep"></span>
+            <span>Dallas, TX</span><span class="sep"></span>
+            <span>170+ hours saved per year</span><span class="sep"></span>
+            <span>100 AI tools curated</span>
           </div>
         </div>
-        <div class="app-stats">
-          <span>Zero dependencies</span>
-          <span>Multi-format import (ICS, vCard, CSV)</span>
-          <span>Email + gift search</span>
+
+        <div class="term" aria-hidden="true">
+          <div class="term-bar"><i></i><i></i><i></i><span>~/ships</span></div>
+          <div class="term-body">
+            <div><span class="p">$</span> <span class="v">whoami</span></div>
+            <div><span class="c">matt duke &mdash; product, shipping in public</span></div>
+            <div style="margin-top:10px"><span class="p">$</span> <span class="v">ls ./projects</span></div>
+            <div><span class="k">sula/</span>            <span class="c"># refunds + real humans</span></div>
+            <div><span class="k">birthday-automator/</span> <span class="c"># never miss one</span></div>
+            <div><span class="k">ai-starter-guide/</span>  <span class="c"># 100+ tools</span></div>
+            <div style="margin-top:10px"><span class="p">$</span> <span class="v">git log --oneline | wc -l</span></div>
+            <div><span class="v">870</span></div>
+          </div>
         </div>
-        <div class="time-saved-row">
-          <span class="time-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Saves ~50 hours per year
-          </span>
-          <span class="time-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Never miss a birthday again
-          </span>
-          <span class="time-note">(depending on how many friends you have)</span>
+      </div>
+    </section>
+
+    <section class="stats" id="activity">
+      <div class="wrap">
+        <div class="stat-head">
+          <div>
+            <div class="eyebrow">Activity</div>
+            <h2 class="sec">What that looks like in commits</h2>
+          </div>
         </div>
-        <div class="action-bar">
-          <button class="readme-toggle-btn" onclick="toggleReadme(this)">
-            <span>View README</span>
-            <span class="arrow">&#9660;</span>
-          </button>
-          <a class="fork-btn" href="https://github.com/MatthewDuke1/birthday-reminder-gifting-app/fork" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-.878a2.25 2.25 0 111.5 0v.878a2.25 2.25 0 01-2.25 2.25h-1.5v2.128a2.251 2.251 0 11-1.5 0V8.5h-1.5A2.25 2.25 0 013.5 6.25v-.878a2.25 2.25 0 111.5 0zM5 3.25a.75.75 0 10-1.5 0 .75.75 0 001.5 0zm6.75.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8 12.75a.75.75 0 10-1.5 0 .75.75 0 001.5 0z"/></svg>
-            Fork this repo
-          </a>
+        <div class="stat-grid">
+          <div class="stat"><div class="n">288</div><div class="l">Pull requests merged</div></div>
+          <div class="stat"><div class="n">870+</div><div class="l">Commits</div></div>
+          <div class="stat"><div class="n">39</div><div class="l">Active repositories</div></div>
+          <div class="stat"><div class="n">35,000+</div><div class="l">Lines changed</div></div>
         </div>
-        <div class="readme-content">
-          <div class="readme-inner">
-            <h4>Overview</h4>
+        <p class="stat-note">Across public and private repositories, as of August 2026.</p>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="stat-head">
+          <div>
+            <div class="eyebrow">Selected work</div>
+            <h2 class="sec">Three things I actually use</h2>
+          </div>
+        </div>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-ico "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div>
+            <div>
+              <div class="card-title"><h3>Birthday Email Automator</h3></div>
+              <p>Compose and send personalized birthday emails with gift search integration. Import contacts from Google Calendar, Apple Contacts, Outlook, or CSV. Configurable heads-up reminders so you never miss a birthday again.</p>
+              <div class="tags"><span>HTML / CSS / JS</span><span>EmailJS</span><span>ICS / vCard Parser</span><span>CSV Import</span><span>GitHub Pages</span><span>AWS S3</span><span>localStorage</span></div>
+            </div>
+          </div>
+          <div class="facts"><span><b>Saves ~50 hrs/year</b></span><span>Zero dependencies</span><span>Multi-format import (ICS, vCard, CSV)</span><span>Email + gift search</span></div>
+          <div class="card-foot">
+            <button class="lnk muted" onclick="toggleReadme(this)" aria-expanded="false">
+              <span>Read the details</span><span class="arrow">&#9660;</span>
+            </button>
+            <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+              
+              <a class="lnk" href="https://github.com/MatthewDuke1/birthday-reminder-gifting-app/fork" target="_blank" rel="noopener">Fork this repo &rarr;</a>
+            </div>
+          </div>
+          <div class="readme"><div class="readme-in"><h4>Overview</h4>
             <p>A static web app that lets you manage birthday reminders and send personalized emails with gift suggestions. No backend required -- runs entirely in the browser with EmailJS for delivery and localStorage for persistence.</p>
 
             <h4>Key Features</h4>
@@ -338,66 +380,33 @@
               # AWS S3:<br/>
               cp .env.example .env<br/>
               chmod +x deploy-aws.sh<br/>
-              ./deploy-aws.sh
-            </div>
-          </div>
-        </div>
-      </div>
+              ./deploy-aws.sh</div></div>
+        </article>
 
-      <!-- App 2: Find Me People -->
-      <div class="app-card">
-        <div class="app-header">
-          <div class="app-icon app-icon-2">F</div>
-          <div class="app-info">
-            <h3>Find Me People</h3>
-            <p>Chrome extension that automatically scans every website you visit for customer service emails, phone numbers, and business hours. Built to fight back against the "annoyance economy" -- the deliberate trend of companies hiding contact info behind chatbot walls.</p>
-            <div class="app-tags">
-              <span class="tag">Chrome Extension</span>
-              <span class="tag">Manifest V3</span>
-              <span class="tag">Vanilla JS</span>
-              <span class="tag">DOM Scanning</span>
-              <span class="tag">Schema.org Parser</span>
-              <span class="tag">Zero Tracking</span>
-            </div>
-            <div class="promo-badge">
-              <span class="pulse-dot"></span>
-              Actively being reviewed by Google &mdash; v1.0.0 coming soon
+        <article class="card">
+          <div class="card-top">
+            <div class="card-ico mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+            <div>
+              <div class="card-title"><h3>Sula</h3><span class="pill live">Live on the Chrome Web Store</span></div>
+              <p>Browser extension for consumer advocacy. It reads the page you're on to surface real customer-service contacts behind chatbot walls, show your refund deadlines, draft the letter that gets your money back, and track subscriptions. Formerly Find Me People.</p>
+              <div class="tags"><span>Chrome Extension</span><span>Manifest V3</span><span>Vanilla JS</span><span>DOM Scanning</span><span>Schema.org Parser</span><span>Zero Tracking</span></div>
             </div>
           </div>
-        </div>
-        <div class="app-stats">
-          <span>Auto-scans every page</span>
-          <span>Ranked by relevance score</span>
-          <span>Live "Open Now" status</span>
-        </div>
-        <div class="time-saved-row">
-          <span class="time-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Saves 45+ hours per year
-          </span>
-          <span class="time-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            More than 2 workdays back
-          </span>
-          <span class="time-note">(based on the $165B/year "annoyance economy")</span>
-        </div>
-        <div class="action-bar">
-          <button class="readme-toggle-btn" onclick="toggleReadme(this)">
-            <span>View README</span>
-            <span class="arrow">&#9660;</span>
-          </button>
-          <a class="fork-btn" href="https://github.com/MatthewDuke1/find-me-people/fork" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-.878a2.25 2.25 0 111.5 0v.878a2.25 2.25 0 01-2.25 2.25h-1.5v2.128a2.251 2.251 0 11-1.5 0V8.5h-1.5A2.25 2.25 0 013.5 6.25v-.878a2.25 2.25 0 111.5 0zM5 3.25a.75.75 0 10-1.5 0 .75.75 0 001.5 0zm6.75.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8 12.75a.75.75 0 10-1.5 0 .75.75 0 001.5 0z"/></svg>
-            Fork this repo
-          </a>
-        </div>
-        <div class="readme-content">
-          <div class="readme-inner">
-            <h4>The Problem</h4>
+          <div class="facts"><span><b>Saves 45+ hrs/year</b></span><span>Auto-scans every page</span><span>Ranked by relevance score</span><span>267 passing tests</span></div>
+          <div class="card-foot">
+            <button class="lnk muted" onclick="toggleReadme(this)" aria-expanded="false">
+              <span>Read the details</span><span class="arrow">&#9660;</span>
+            </button>
+            <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+              <a class="lnk" href="https://trysula.com/" target="_blank" rel="noopener" style="color:var(--mint)">trysula.com &rarr;</a>
+              <a class="lnk" href="https://github.com/MatthewDuke1/find-me-people/fork" target="_blank" rel="noopener">Fork this repo &rarr;</a>
+            </div>
+          </div>
+          <div class="readme"><div class="readme-in"><h4>The Problem</h4>
             <p>Customer service is disappearing. Companies are cutting support staff, hiding contact info behind chatbot walls, and burying phone numbers under 4+ clicks. The "annoyance economy" costs Americans <strong>$165 billion per year</strong> in wasted time and money (Groundwork Collaborative, 2026). Hold times are up 60% over 20 years. 74% of customers reported a problem last year -- double the rate since 1976.</p>
 
             <h4>What It Does</h4>
-            <p>Find Me People runs automatically on every page you visit and surfaces:</p>
+            <p>Sula runs automatically on every page you visit and surfaces:</p>
             <ul>
               <li><strong>Customer service emails</strong> -- ranked by relevance (support@, help@, care@ score highest; noreply@, jobs@ are penalized)</li>
               <li><strong>Phone numbers</strong> -- US and international, prioritized when found near support keywords</li>
@@ -408,7 +417,7 @@
             </ul>
 
             <h4>Time Saved Calculation</h4>
-            <p>Average American manages 10-15+ service relationships and faces 60-80 customer service interactions per year. At 10-15 minutes spent hunting for the right number or email each time, that's 15-20 hours per year wasted on search alone -- before you even reach a person. Find Me People reduces that search to about 5 seconds. <strong>Saves 20+ hours per year on search</strong>, and additional time by surfacing direct support pages that bypass chatbot funnels.</p>
+            <p>Average American manages 10-15+ service relationships and faces 60-80 customer service interactions per year. At 10-15 minutes spent hunting for the right number or email each time, that's 15-20 hours per year wasted on search alone -- before you even reach a person. Sula reduces that search to about 5 seconds. <strong>Saves 20+ hours per year on search</strong>, and additional time by surfacing direct support pages that bypass chatbot funnels.</p>
 
             <h4>Privacy</h4>
             <p>Zero data collection. Zero network requests. Zero tracking. All scanning happens locally in the browser. No backend, no analytics, no cookies. Open source for verification.</p>
@@ -424,54 +433,29 @@
             </table>
 
             <h4>Quick Start</h4>
-            <div class="cmd-block">git clone https://github.com/MatthewDuke1/find-me-people.git<br/># Open chrome://extensions/<br/># Enable Developer mode<br/># Click "Load unpacked" and select the folder</div>
-          </div>
-        </div>
-      </div>
-      <!-- App 3: AI Starter Guide -->
-      <div class="app-card">
-        <div class="app-header">
-          <div class="app-icon app-icon-3">A</div>
-          <div class="app-info">
-            <h3>AI Starter Guide</h3>
-            <p>Interactive site that helps people who want to use AI but don't know where to start. Pick a goal (automate, build, write, design, code, learn...) and get curated tool recommendations with descriptions, free credits, differentiators, and "Try it" links. 100+ tools across 12 categories.</p>
-            <div class="app-tags">
-              <span class="tag">HTML / CSS / JS</span>
-              <span class="tag">Zero Dependencies</span>
-              <span class="tag">Autocomplete Search</span>
-              <span class="tag">Filters</span>
-              <span class="tag">GitHub Pages</span>
+            <div class="cmd-block">git clone https://github.com/MatthewDuke1/find-me-people.git<br/># Open chrome://extensions/<br/># Enable Developer mode<br/># Click "Load unpacked" and select the folder</div></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="card-ico amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg></div>
+            <div>
+              <div class="card-title"><h3>AI Starter Guide</h3></div>
+              <p>Interactive site for people who want to use AI but don't know where to start. Pick a goal (automate, build, write, design, code, learn) and get curated tool recommendations with descriptions, free credits, differentiators, and "Try it" links.</p>
+              <div class="tags"><span>HTML / CSS / JS</span><span>Zero Dependencies</span><span>Autocomplete Search</span><span>Filters</span><span>GitHub Pages</span></div>
             </div>
           </div>
-        </div>
-        <div class="app-stats">
-          <span>100+ AI tools curated</span>
-          <span>12 goal categories</span>
-          <span>Free tier filters</span>
-        </div>
-        <div class="time-saved-row">
-          <span class="time-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Saves ~75 hours per year
-          </span>
-          <span class="time-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Skip the AI ramp-up tax
-          </span>
-        </div>
-        <div class="action-bar">
-          <button class="readme-toggle-btn" onclick="toggleReadme(this)">
-            <span>View README</span>
-            <span class="arrow">&#9660;</span>
-          </button>
-          <a class="fork-btn" href="https://github.com/MatthewDuke1/ai-starter-guide/fork" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-.878a2.25 2.25 0 111.5 0v.878a2.25 2.25 0 01-2.25 2.25h-1.5v2.128a2.251 2.251 0 11-1.5 0V8.5h-1.5A2.25 2.25 0 013.5 6.25v-.878a2.25 2.25 0 111.5 0zM5 3.25a.75.75 0 10-1.5 0 .75.75 0 001.5 0zm6.75.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8 12.75a.75.75 0 10-1.5 0 .75.75 0 001.5 0z"/></svg>
-            Fork this repo
-          </a>
-        </div>
-        <div class="readme-content">
-          <div class="readme-inner">
-            <h4>The Problem</h4>
+          <div class="facts"><span><b>Saves ~75 hrs/year</b></span><span>100+ AI tools curated</span><span>12 goal categories</span><span>Free tier filters</span></div>
+          <div class="card-foot">
+            <button class="lnk muted" onclick="toggleReadme(this)" aria-expanded="false">
+              <span>Read the details</span><span class="arrow">&#9660;</span>
+            </button>
+            <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+              
+              <a class="lnk" href="https://github.com/MatthewDuke1/ai-starter-guide/fork" target="_blank" rel="noopener">Fork this repo &rarr;</a>
+            </div>
+          </div>
+          <div class="readme"><div class="readme-in"><h4>The Problem</h4>
             <p>The AI tool landscape is overwhelming. There are now thousands of AI products across automation, writing, code, design, video, audio, research, agents, learning, and productivity -- and the average person doesn't know where to start. Every new tool costs you hours just to figure out what it does, whether it's worth using, and how it compares to alternatives.</p>
 
             <h4>The AI Ramp-Up Tax</h4>
@@ -501,26 +485,31 @@
             </ul>
 
             <h4>Quick Start</h4>
-            <div class="cmd-block">git clone https://github.com/MatthewDuke1/ai-starter-guide.git<br/>open docs/index.html<br/># Or visit: https://matthewduke1.github.io/ai-starter-guide/</div>
-          </div>
-        </div>
+            <div class="cmd-block">git clone https://github.com/MatthewDuke1/ai-starter-guide.git<br/>open docs/index.html<br/># Or visit: https://matthewduke1.github.io/ai-starter-guide/</div></div>
+        </article>
       </div>
+    </section>
+  </main>
 
-
-
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <div>Matt Duke &mdash; Dallas, TX</div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="https://www.linkedin.com/in/the-duke/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/MatthewDuke1" target="_blank" rel="noopener">GitHub</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
     </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <p>Matt Duke &mdash; Dallas, TX &mdash; <a href="https://www.linkedin.com/in/the-duke/">LinkedIn</a> &mdash; <a href="https://github.com/MatthewDuke1">GitHub</a> &mdash; <a href="/privacy.html">Privacy</a></p>
-    <p style="margin-top:8px;">Built with AI-assisted engineering &mdash; saving 170+ hours per year, every year</p>
-  </div>
+  </footer>
 
   <script>
     function toggleReadme(btn) {
-      btn.classList.toggle('open');
-      btn.closest('.action-bar').nextElementSibling.classList.toggle('open');
+      var card = btn.closest('.card');
+      var panel = card.querySelector('.readme');
+      var open = panel.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.querySelector('span').textContent = open ? 'Hide the details' : 'Read the details';
     }
   </script>
 </body>
